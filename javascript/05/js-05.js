@@ -3,7 +3,7 @@ document.write("<h3>Manipulando datas:</h3>");
 
 // Criar uma instância da classe Date() do Javascript
 const dataAtual = new Date();
-document.write(dataAtual)
+document.write(dataAtual);
 
 // Pegando o dia atual:
 const dia = dataAtual.getDate();
