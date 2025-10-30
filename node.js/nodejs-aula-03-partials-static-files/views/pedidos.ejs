@@ -1,0 +1,21 @@
+<%- include ('partials/header') %>
+    <h1>Pedidos</h1>
+
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <th>Número: </th>
+            <th>Produto: </th>
+            <th>Valor do Pedido: </th>
+        </thead>
+        <tbody>
+            <% pedidos.forEach(pedido => { %>  
+            <tr>
+                <td><%= pedido.numero %></td>
+                <td><%= pedido.produto %></td>
+                <td><%= pedido.preco.toLocaleString("pt-br", {style: "currency", currency: "BRL"})%></td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <a href="/">Voltar</a>
+<%- include ('partials/footer') %>
