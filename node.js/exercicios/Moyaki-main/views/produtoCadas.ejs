@@ -1,0 +1,26 @@
+<%- include ('partials/header.ejs') %>
+
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header">
+            <h2>Cadastro de usuário</h2>
+        </div>
+        <div class="card-body">
+            <form action="/createProdutos" method="post">
+                <label for="nome">Nome:</label>
+                <input class="form-control" name="nome" type="text" placeholder="Insira um nome: " required><br>
+
+                <label for="foto">Foto:</label>
+                <input class="form-control" name="foto" type="text" placeholder="Insira uma foto" required><br>
+
+                 <label for="senha">Preço:</label>
+                <input class="form-control" name="preco" type="text" placeholder="Insira um preço" required><br>
+
+                <button type="submit" class="btn btn-success btn-block">Cadastrar</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<%- include ('partials/footer.ejs') %>

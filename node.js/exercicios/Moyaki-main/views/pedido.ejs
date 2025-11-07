@@ -1,0 +1,19 @@
+<%- include ('partials/header.ejs') %>
+ <table class="table">
+        <thead>
+            <th>Número: </th>
+            <th>Produto: </th>
+            <th>Valor do Pedido: </th>
+        </thead>
+        <tbody>
+            <% pedido.forEach(pedido => { %>  
+            <tr>
+                <td><%= pedido.numero %></td>
+                <td><%= pedido.produto %></td>
+                <td><%= pedido.preco.toLocaleString("pt-br", {style: "currency", currency: "BRL"})%></td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <a href="/">Voltar</a>
+<%- include ('partials/footer.ejs') %>

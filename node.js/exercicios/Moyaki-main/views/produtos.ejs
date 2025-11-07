@@ -1,0 +1,38 @@
+<%- include ('partials/header.ejs') %>
+    <h3 class="bbb_viewed_title">Produtos</h3>
+    <a href="/produtoCadas">
+        <button class="btn btn-success btn-sm">Cadastrar</button>
+    </a>
+    <div class="div-products">
+        <table class="table table-bordered table-hover">
+                <tbody>
+                    <% produtos.forEach(produtos=> { %>
+                        <tr>
+                            <td>
+                                <%= produtos.nome %>
+                            </td>
+                            <td>
+                                <img src="/imgs/<%= produtos.foto %>" height="50px" width="50px" alt="Card image cap">
+                            </td>
+                            <td>
+                                <%= produtos.preco.toLocaleString("pt-br", {style: "currency", currency: "BRL"})%>
+                            </td>
+
+                            <td class="text-center" style="max-width: 30px;">
+                                <a href="/produtos/edit/<%= produtos.id %>">
+                                    <button class="btn btn-warning btn-sm">Editar</button>
+                                </a>
+                            </td>
+                            <td class="text-center" style="max-width: 30px;">
+                                <a href="/produtos/delete/<%= produtos.id %>" onclick="return confirm('Deseja mesmo excluir o cliente')">
+                                    <button class="btn btn-danger btn-sm">Excluir</button>
+                                </a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+         </table>
+    </div>
+   
+
+<%- include ('partials/footer.ejs') %>
